@@ -26,20 +26,21 @@ class SignIn extends React.Component{
     render(){
         return(
             <div className="sign-in" >
-                <h2>LOGIN</h2>
+                <h2>Login</h2>
                 <span>Sign in with your email and password </span>
 
                 <form onSubmit={this.handelSubmit}>
                     <FormInput 
                     name="email" value={this.state.email} 
-                    handelChange={this.handelChange} label="Email" type="email" autocomplete="off" required />
+                    handelChange={this.handelChange} label="Email" type="email" autoComplete="off" required />
                     
                     <FormInput 
                     name="password" value={this.state.password} handelChange={this.handelChange} label="password" type="password" required />
                     
-
+                <div className="buttons">
                     <CustomButton type="submit">Sign In</CustomButton>
-                    <CustomButton onClick={signInWithGoogle}>Sign In with Google</CustomButton>
+                    <CustomButton onClick={signInWithGoogle} isGoogleSignin>Sign In with Google</CustomButton>
+                    </div>
                 </form>
             </div>
         )
